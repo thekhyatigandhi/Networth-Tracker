@@ -2,92 +2,20 @@
   <head>
 	<html lang="en">
     <title>Net Worth Tracker</title>
-    <style>
-      body {
-        font-family: Neue Haas, Grotesk, Calibre
-        background-color: #f2f2f2;
-      }
-
-      .container {
-        margin: 20px auto;
-        padding: 20px;
-        background-color: #fff;
-        border-radius: 10px;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-        max-width: 500px;
-      }
-
-      h1 {
-        text-align: center;
-		display: block;
-		background-color: peachpuff;
-      }
-
-      form {
-        display: flex;
-        flex-direction: column;
-      }
-
-      label {
-        margin-bottom: 10px;
-        font-weight: bold;
-      }
-
-      input[type="number"] {
-        padding: 5px;
-        border-radius: 5px;
-        border: none;
-        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
-      }
-
-      input[type="button"] {
-        margin-top: 20px;
-        padding: 10px;
-        border-radius: 5px;
-        border: none;
-        background-color: #4caf50;
-        color: #fff;
-        font-weight: bold;
-        cursor: pointer;
-        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
-      }
-
-      input[type="button"]:hover {
-        background-color: #3e8e41;
-      }
-
-      input[type="number"][readonly] {
-        background-color: #f2f2f2;
-        color: black;
-        font-weight: bold;
-        box-shadow: none;
-        cursor: not-allowed;
-      }
-    </style>
-  </head>
+    <link rel="stylesheet" href="./Style.css" />
+      </head>
   <body>
     <div class="container">
       <h1>Net Worth Tracker</h1>
       <form>
-        <label for="cash">Cash:
-		</label>
+        <label for="cash">Cash:</label>
         <input type="number" id="cash" name="cash" value="0"/><br />
 
         <label for="chequingAccount">Chequing Account:</label>
-        <input
-          type="number"
-          id="chequingAccount"
-          name="chequingAccount"
-          value="0"
-        /><br />
+        <input type="number" id="chequingAccount" name="chequingAccount" value="0" /><br />
 
         <label for="savingsAccount">Savings Account:</label>
-        <input
-          type="number"
-          id="savingsAccount"
-          name="savingsAccount"
-          value="0"
-        /><br />
+        <input type="number" id="savingsAccount" name="savingsAccount" value="0"/><br />
 
         <label for="stocks">Stocks:</label>
         <input type="number" id="stocks" name="stocks" value="0" /><br />
@@ -99,28 +27,13 @@
         <input type="number" id="preciousMetals" name="preciousMetals" value="0" /><br />
 
         <label for="realEstate">Real Estate:</label>
-        <input
-          type="number"
-          id="realEstate"
-          name="realEstate"
-          value="0"
-        /><br />
+        <input type="number" id="realEstate" name="realEstate" value="0"/><br />
 
         <label for="bankFixedDeposits">Bank Fixed Deposits:</label>
-        <input
-          type="number"
-          id="bankFixedDeposits"
-          name="bankFixedDeposits"
-          value="0"
-        /><br />
+        <input type="number" id="bankFixedDeposits" name="bankFixedDeposits" value="0" /><br />
 
 		<label for="crypto">Crypto:</label>
-        <input
-          type="number"
-          id="crypto"
-          name="crypto"
-          value="0"
-        /><br />
+        <input type="number" id="crypto" name="crypto" value="0"/><br />
 
         <label for="loans">Loans:</label>
         <input type="number" id="loans" name="loans" value="0" /><br />
@@ -128,9 +41,7 @@
         <label for="land">Land:</label>
         <input type="number" id="land" name="land" value="0" /><br />
 
-        <label for="lifeInsurancePolicyMaturityValue"
-          >Life Insurance Policy Maturity Value:</label
-        >
+        <label for="lifeInsurancePolicyMaturityValue">Life Insurance Policy Maturity Value:</label>
         <input
           type="number"
           id="lifeInsurancePolicyMaturityValue"
