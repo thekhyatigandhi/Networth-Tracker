@@ -4,7 +4,7 @@
     <title>Net Worth Tracker</title>
     <style>
       body {
-        font-family: Arial, sans-serif;
+        font-family: Neue Haas, Grotesk, Calibre
         background-color: #f2f2f2;
       }
 
@@ -19,6 +19,8 @@
 
       h1 {
         text-align: center;
+		display: block;
+		background-color: peachpuff;
       }
 
       form {
@@ -56,7 +58,7 @@
 
       input[type="number"][readonly] {
         background-color: #f2f2f2;
-        color: #555;
+        color: black;
         font-weight: bold;
         box-shadow: none;
         cursor: not-allowed;
@@ -67,8 +69,9 @@
     <div class="container">
       <h1>Net Worth Tracker</h1>
       <form>
-        <label for="cash">Cash:</label>
-        <input type="number" id="cash" name="cash" value="0" /><br />
+        <label for="cash">Cash:
+		</label>
+        <input type="number" id="cash" name="cash" value="0"/><br />
 
         <label for="chequingAccount">Chequing Account:</label>
         <input
@@ -92,8 +95,8 @@
         <label for="bonds">Bonds:</label>
         <input type="number" id="bonds" name="bonds" value="0" /><br />
 
-        <label for="gold">Gold:</label>
-        <input type="number" id="gold" name="gold" value="0" /><br />
+        <label for="preciousMetals">Precious Metals:</label>
+        <input type="number" id="preciousMetals" name="preciousMetals" value="0" /><br />
 
         <label for="realEstate">Real Estate:</label>
         <input
@@ -108,6 +111,14 @@
           type="number"
           id="bankFixedDeposits"
           name="bankFixedDeposits"
+          value="0"
+        /><br />
+
+		<label for="crypto">Crypto:</label>
+        <input
+          type="number"
+          id="crypto"
+          name="crypto"
           value="0"
         /><br />
 
@@ -132,6 +143,14 @@
           type="number"
           id="accountReceivables"
           name="accountReceivables"
+          value="0"
+        /><br />
+
+		<label for="jewelry">Jewelry:</label>
+        <input
+          type="number"
+          id="jewelry"
+          name="jewelry"
           value="0"
         /><br />
 
@@ -193,7 +212,7 @@
 
         <input
           type="button"
-          value="Calculate"
+          value="CALCULATE"
           onclick="calculateNetWorth()"
         /><br />
 
@@ -210,13 +229,15 @@
   var savingsAccount = Number(document.getElementById("savingsAccount").value);
   var stocks = Number(document.getElementById("stocks").value);
   var bonds = Number(document.getElementById("bonds").value);
-  var gold = Number(document.getElementById("gold").value);
+  var preciousMetals = Number(document.getElementById("preciousMetals").value);
   var realEstate = Number(document.getElementById("realEstate").value);
   var bankFixedDeposits = Number(document.getElementById("bankFixedDeposits").value);
+  var crypto = Number(document.getElementById("crypto").value);
   var loans = Number(document.getElementById("loans").value);
   var land = Number(document.getElementById("land").value);
   var lifeInsurancePolicyMaturityValue = Number(document.getElementById("lifeInsurancePolicyMaturityValue").value);
   var accountReceivables = Number(document.getElementById("accountReceivables").value);
+  var jewelry = Number(document.getElementById("jewelry").value);
   var homeMortgage = Number(document.getElementById("homeMortgage").value);
   var automobileLoans = Number(document.getElementById("automobileLoans").value);
   var creditCardLoans = Number(document.getElementById("creditCardLoans").value);
@@ -226,13 +247,13 @@
   var unpaidTaxes = Number(document.getElementById("unpaidTaxes").value);
 
 
-  if (isNaN(cash) || isNaN(chequingAccount) || isNaN(savingsAccount) || isNaN(stocks) || isNaN(bonds) || isNaN(gold) || isNaN(realEstate) || isNaN(bankFixedDeposits) || isNaN(loans) || isNaN(land) || isNaN(lifeInsurancePolicyMaturityValue) || isNaN(accountReceivables) || isNaN(homeMortgage) || isNaN(automobileLoans) || isNaN(creditCardLoans) || isNaN(personalLoans) || isNaN(studentLoans) || isNaN(lineOfCredit) || isNaN(unpaidTaxes)) {
+  if (isNaN(cash) || isNaN(chequingAccount) || isNaN(savingsAccount) || isNaN(stocks) || isNaN(bonds) || isNaN(preciousMetals) || isNaN(realEstate) || isNaN(bankFixedDeposits) || isNaN(crypto)|| isNaN(loans) || isNaN(land) || isNaN(lifeInsurancePolicyMaturityValue) || isNaN(accountReceivables) || isNaN(jewelry) ||isNaN(homeMortgage) || isNaN(automobileLoans) || isNaN(creditCardLoans) || isNaN(personalLoans) || isNaN(studentLoans) || isNaN(lineOfCredit) || isNaN(unpaidTaxes)) {
     alert("Please enter valid numbers for all fields.");
     return;
   }
 
   // Calculate net worth
-  var netWorth = cash + chequingAccount + savingsAccount + stocks + bonds + gold + realEstate + bankFixedDeposits - loans - land - lifeInsurancePolicyMaturityValue - accountReceivables - homeMortgage - automobileLoans - creditCardLoans - personalLoans - studentLoans - lineOfCredit - unpaidTaxes;
+  var netWorth = cash + chequingAccount + savingsAccount + stocks + bonds + preciousMetals + realEstate + bankFixedDeposits + crypto + loans + land + lifeInsurancePolicyMaturityValue + accountReceivables + jewelry - homeMortgage - automobileLoans - creditCardLoans - personalLoans - studentLoans - lineOfCredit - unpaidTaxes;
   document.getElementById("netWorth").value = netWorth;
 }
 </script>
