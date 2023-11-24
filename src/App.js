@@ -1,24 +1,24 @@
+import React, { useState } from "react";
+import NavBar from "./NavBar"; // Import NavBar without "../src" as it should be in the same directory
 import Expense from "./Components/Expense";
 import Income from "./Components/Income";
-import NavBar from "./Components/NavBar";
 import TotalBalance from "./Components/TotalBalance";
 import TransactionTable from "./Components/TransactionTable";
 import IncomeGraph from "./Components/IncomeGraph";
 import ExpenseGraph from "./Components/ExpenseGraph";
 import TransactionCard from "./Components/AddTransactionCard";
-import { useState } from "react";
+import AboutUs from "./Pages/AboutUs";
 
 function App() {
-  var [transaction, setTransaction] = useState([]);
+  const [transactions, setTransactions] = useState([]);
 
-  var saveTransaction = function (item) {
-    setTransaction([...transaction, item]);
-    console.log([...transaction, item]);
+  const saveTransaction = (item) => {
+    setTransactions([...transactions, item]);
   };
 
-  var removeTrans = function (index) {
-    console.log(index);
-    setTransaction([...transaction.filter((e) => e.id !== index)]);
+  const removeTrans = (index) => {
+    const updatedTransactions = transactions.filter((e) => e.id !== index);
+    setTransactions(updatedTransactions);
   };
 
   return (
@@ -27,26 +27,26 @@ function App() {
       <div className="container">
         <div className="row">
           <div className="col-lg-4 col-md-4 col-sm-12 mt-4">
-            <Income data={transaction} />
+            <Income data={transactions} />
           </div>
           <div className="col-lg-4 col-md-4 col-sm-12 mt-4">
-            <Expense data={transaction} />
+            <Expense data={transactions} />
           </div>
           <div className="col-lg-4 col-md-4 col-sm-12 mt-4">
-            <TotalBalance data={transaction} />
+            <TotalBalance data={transactions} />
           </div>
         </div>
 
         <div className="row flex">
           <div className="col-lg-4 mt-4">
-            <TransactionTable data={transaction} remove={removeTrans} />
+            <TransactionTable data={transactions} remove={removeTrans} />
             <TransactionCard save={saveTransaction} />
           </div>
           <div className="col-lg-4 col-md-6 mt-4">
-            <IncomeGraph data={transaction} />
+            <IncomeGraph data={transactions} />
           </div>
           <div className="col-lg-4 col-md-6 mt-4">
-            <ExpenseGraph data={transaction} />
+            <ExpenseGraph data={transactions} />
           </div>
         </div>
       </div>
