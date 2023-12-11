@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import logo from "./logo.png"; // Import your logo
-import "./NavBar"; // Import the CSS file
+import "./NavBar.css"; // Import the CSS file
 
 function NavBar() {
   return (
@@ -10,22 +11,22 @@ function NavBar() {
       </div>
       <ul>
         <li>
-          <a href="#about">About Us</a>
+          <Link to="/about-us">About Us</Link>
         </li>
         <li>
-          <a href="#networth-tracker">Networth Tracker</a>
+          <Link to="/networth-tracker">Networth Tracker</Link>
         </li>
         <li>
-          <a href="#uniqueness">Our Uniqueness</a>
+          <Link to="/our-uniqueness">Our Uniqueness</Link>
         </li>
         <li>
-          <a href="#services">Our Services</a>
+          <Link to="/our-services">Our Services</Link>
         </li>
         <li>
-          <a href="#learning">Learning</a>
+          <Link to="/learning">Learning</Link>
         </li>
         <li>
-          <a href="#contact">Contact Us</a>
+          <Link to="/contact">Contact Us</Link>
         </li>
       </ul>
     </nav>

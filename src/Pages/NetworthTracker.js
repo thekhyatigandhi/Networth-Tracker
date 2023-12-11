@@ -12,7 +12,12 @@ function NetworthTracker() {
   const [transactions, setTransactions] = useState([]);
 
   const addTransaction = (transaction) => {
-    setTransactions([...transactions, transaction]);
+    try {
+      setTransactions((prevTransactions) => [...prevTransactions, transaction]);
+    } catch (error) {
+      console.error("Failed to update transactions:", error);
+      // Handle the error, e.g., show a user-friendly message
+    }
   };
 
   return (

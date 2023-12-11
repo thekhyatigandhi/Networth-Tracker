@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import NavBar from "./NavBar"; // Import NavBar without "../src" as it should be in the same directory
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import NavBar from "./NavBar";
 import Expense from "./Components/Expense";
 import Income from "./Components/Income";
 import TotalBalance from "./Components/TotalBalance";
@@ -8,6 +9,13 @@ import IncomeGraph from "./Components/IncomeGraph";
 import ExpenseGraph from "./Components/ExpenseGraph";
 import TransactionCard from "./Components/AddTransactionCard";
 import AboutUs from "./Pages/AboutUs";
+import NetworthTracker from "./Pages/NetworthTracker";
+
+// Import other necessary components
+import Uniquness from "./Pages/Uniquness";
+import Services from "./Pages/Services";
+import Learning from "./Pages/Learning";
+import ContactUs from "./Pages/ContactUs";
 
 function App() {
   const [transactions, setTransactions] = useState([]);
@@ -22,35 +30,54 @@ function App() {
   };
 
   return (
-    <div>
-      <NavBar />
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-4 col-md-4 col-sm-12 mt-4">
-            <Income data={transactions} />
-          </div>
-          <div className="col-lg-4 col-md-4 col-sm-12 mt-4">
-            <Expense data={transactions} />
-          </div>
-          <div className="col-lg-4 col-md-4 col-sm-12 mt-4">
-            <TotalBalance data={transactions} />
-          </div>
-        </div>
+    <Router>
+      <div>
+        <NavBar />
+        <Routes>
+          <Route path="/about-us" element={<AboutUs />} />
+          <Route path="/networth-tracker" element={<NetworthTracker />} />
+          <Route path="/our-uniqueness" element={<Uniquness />} />
+          <Route path="/our-services" element={<Services />} />
+          <Route path="/learning" element={<Learning />} />
+          <Route path="/contact" element={<ContactUs />} />
 
-        <div className="row flex">
-          <div className="col-lg-4 mt-4">
-            <TransactionTable data={transactions} remove={removeTrans} />
-            <TransactionCard save={saveTransaction} />
-          </div>
-          <div className="col-lg-4 col-md-6 mt-4">
-            <IncomeGraph data={transactions} />
-          </div>
-          <div className="col-lg-4 col-md-6 mt-4">
-            <ExpenseGraph data={transactions} />
-          </div>
-        </div>
+          <Route
+            path="/"
+            element={
+              <div className="container">
+                <div className="row">
+                  <div className="col-lg-4 col-md-4 col-sm-12 mt-4">
+                    <Income data={transactions} />
+                  </div>
+                  <div className="col-lg-4 col-md-4 col-sm-12 mt-4">
+                    <Expense data={transactions} />
+                  </div>
+                  <div className="col-lg-4 col-md-4 col-sm-12 mt-4">
+                    <TotalBalance data={transactions} />
+                  </div>
+                </div>
+
+                <div className="row">
+                  <div className="col-lg-4 mt-4">
+                    <TransactionTable
+                      data={transactions}
+                      remove={removeTrans}
+                    />
+                    <TransactionCard save={saveTransaction} />
+                  </div>
+                  <div className="col-lg-4 col-md-6 mt-4">
+                    <IncomeGraph data={transactions} />
+                  </div>
+                  <div className="col-lg-4 col-md-6 mt-4">
+                    <ExpenseGraph data={transactions} />
+                  </div>
+                </div>
+              </div>
+            }
+          />
+        </Routes>
       </div>
-    </div>
+    </Router>
   );
 }
 
