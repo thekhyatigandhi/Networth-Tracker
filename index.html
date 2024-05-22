@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Net Worth Tracker</title>
+    <link rel="icon" type="image/x-icon" href="./logo.png" />
+    <link rel="stylesheet" href="./Style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>NETWORTH TRACKER</h1>
+      <form>
+        <label for="cash">Cash:</label>
+        <input type="number" id="cash" name="cash" value="0" /><br />
+        <label for="chequingAccount">Chequing Account:</label>
+        <input
+          type="number"
+          id="chequingAccount"
+          name="chequingAccount"
+          value="0"
+        /><br />
+        <label for="savingsAccount">Savings Account:</label>
+        <input
+          type="number"
+          id="savingsAccount"
+          name="savingsAccount"
+          value="0"
+        /><br />
+        <label for="stocks" class="asset">Stocks:</label>
+        <input type="number" id="stocks" name="stocks" value="0" /><br />
+        <label for="bonds">Bonds:</label>
+        <input type="number" id="bonds" name="bonds" value="0" /><br />
+        <label for="preciousMetals">Precious Metals:</label>
+        <input
+          type="number"
+          id="preciousMetals"
+          name="preciousMetals"
+          value="0"
+        /><br />
+        <label for="realEstate">Real Estate:</label>
+        <input
+          type="number"
+          id="realEstate"
+          name="realEstate"
+          value="0"
+        /><br />
+        <label for="bankFixedDeposits">Bank Fixed Deposits:</label>
+        <input
+          type="number"
+          id="bankFixedDeposits"
+          name="bankFixedDeposits"
+          value="0"
+        /><br />
+        <label for="crypto">Crypto:</label>
+        <input type="number" id="crypto" name="crypto" value="0" /><br />
+        <label for="loans">Loans:</label>
+        <input type="number" id="loans" name="loans" value="0" /><br />
+        <label for="land">Land:</label>
+        <input type="number" id="land" name="land" value="0" /><br />
+        <label for="lifeInsurancePolicyMaturityValue"
+          >Life Insurance Policy Maturity Value:</label
+        >
+        <input
+          type="number"
+          id="lifeInsurancePolicyMaturityValue"
+          name="lifeInsurancePolicyMaturityValue"
+          value="0"
+        /><br />
+        <label for="accountReceivables">Account Receivables:</label>
+        <input
+          type="number"
+          id="accountReceivables"
+          name="accountReceivables"
+          value="0"
+        /><br />
+        <label for="jewelry">Jewelry:</label>
+        <input type="number" id="jewelry" name="jewelry" value="0" /><br />
+        <label for="homeMortgage">Home Mortgage:</label>
+        <input
+          type="number"
+          id="homeMortgage"
+          name="homeMortgage"
+          value="0"
+        /><br />
+        <label for="automobileLoans">Automobile Loans:</label>
+        <input
+          type="number"
+          id="automobileLoans"
+          name="automobileLoans"
+          value="0"
+        /><br />
+        <label for="creditCardLoans">Credit Card Loans:</label>
+        <input
+          type="number"
+          id="creditCardLoans"
+          name="creditCardLoans"
+          value="0"
+        /><br />
+        <label for="personalLoans">Personal Loans:</label>
+        <input
+          type="number"
+          id="personalLoans"
+          name="personalLoans"
+          value="0"
+        /><br />
+        <label for="studentLoans">Student Loans:</label>
+        <input
+          type="number"
+          id="studentLoans"
+          name="studentLoans"
+          value="0"
+        /><br />
+        <label for="lineOfCredit">Line Of Credit:</label>
+        <input
+          type="number"
+          id="lineOfCredit"
+          name="lineOfCredit"
+          value="0"
+        /><br />
+        <label for="unpaidTaxes">Unpaid Taxes:</label>
+        <input
+          type="number"
+          id="unpaidTaxes"
+          name="unpaidTaxes"
+          value="0"
+        /><br />
+        <input
+          type="button"
+          value="CALCULATE"
+          onclick="calculateNetWorth()"
+        /><br />
+        <label for="netWorth">Net Worth:</label>
+        <input type="number" id="netWorth" name="netWorth" value="0" readonly />
+      </form>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
